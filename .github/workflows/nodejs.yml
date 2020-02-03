@@ -20,14 +20,19 @@ jobs:
     - run: npm install
     - run: npm run build --if-present
     - run: npm test
+    - name: Archive code coverage results
+        uses: actions/upload-artifact@v1
+        with:
+          name: code-coverage-report
+          path: coverage
       env:
         CI: true
-    - name: fix code coverage paths
-      working-directory: ./coverage
-      run: |
-      	sed -i 's+/home/runner/work/pre-xend/pre-xend+/github/workspace+g' lcov.info
-      	sed -i 's+/home/runner/work/pre-xend/pre-xend+/github/workspace+g' sonar-cloud-reporter.xml
-        
+
+    - name: Download code coverage results
+        uses: actions/download-artifact@v1
+        with:
+          name: code-coverage-report
+          path: coverage    
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.1
       env:

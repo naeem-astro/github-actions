@@ -23,10 +23,10 @@ jobs:
       env:
         CI: true
     - name: fix code coverage paths
-	    working-directory: ./coverage
-	    run: |
-	      sed -i 's/\/home\/runner\/work\/pre-xend\/pre-xend\//\/github\/workspace\//g' lcov.info
-	      sed -i 's/\/home\/runner\/work\/pre-xend\/pre-xend\//\/github\/workspace\//g' sonar-cloud-reporter.xml
+      working-directory: ./coverage
+      run: |
+      	sed -i 's+/home/runner/work/pre-xend/pre-xend+/github/workspace+g' lcov.info
+      	sed -i 's+/home/runner/work/pre-xend/pre-xend+/github/workspace+g' sonar-cloud-reporter.xml
         
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.1

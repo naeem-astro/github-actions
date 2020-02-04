@@ -1,0 +1,1 @@
+![Node.js Build, Test, Deploy](https://github.com/naeem-astro/pre-xend/workflows/Node.js%20Build,%20Test,%20Deploy/badge.svg?branch=deploy)

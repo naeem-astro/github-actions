@@ -37,4 +37,4 @@ jobs:
         heroku_email: "YOUR EMAIL"
         buildpack: "SOME BUILDPACK" #OPTIONAL        
         dontuseforce: false #OPTIONAL and DEFAULT - false
-        usedocker: true #OPTIONAL and DEFAULT - false
+        usedocker: false #OPTIONAL and DEFAULT - false

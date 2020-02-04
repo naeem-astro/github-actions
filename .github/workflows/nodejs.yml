@@ -24,7 +24,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: code-coverage-report
-        path: coverage/**
+        path: coverage
         
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.1

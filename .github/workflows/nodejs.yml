@@ -22,11 +22,6 @@ jobs:
     - run: npm test
     - run: |
         sed -i 's+/home/runner/work/pre-xend/pre-xend+/github/workspace+g' coverage/lcov.info
-    - name: Archive code coverage results
-      uses: actions/upload-artifact@v1
-      with:
-        name: code-coverage-report
-        path: coverage
         
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.1

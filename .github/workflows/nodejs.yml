@@ -20,8 +20,11 @@ jobs:
     - run: npm install
     - run: npm run build --if-present
     - run: npm test
-      env:
-        CI: true
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v1
+      with:
+        name: code-coverage-report
+        path: coverage/**
         
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.1

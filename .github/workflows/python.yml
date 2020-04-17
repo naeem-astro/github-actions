@@ -20,4 +20,4 @@ jobs:
         run: |
           cd python-code
           pipenv install --dev      
-          pipenv run pytest
+          pipenv run pytest -v

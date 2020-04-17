@@ -24,8 +24,6 @@ jobs:
         run: |
           set -xe
           python -VV
-          python -m site
-          python -m pip install --upgrade pip setuptools wheel
           python -m pip install pipenv
           python -m pipenv install 
           python -m pipenv shell
